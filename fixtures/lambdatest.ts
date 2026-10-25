@@ -22,7 +22,7 @@ export const test = base.extend<LtOptions>({
       browserVersion: ltCaps.browserVersion,
       'LT:Options': {
         platform: ltCaps.platform,
-        build: 'Playwright 101 Assignment',
+        build: 'Playwright 101 Final',
         name: testInfo.title,
         user: process.env.LT_USERNAME,
         accessKey: process.env.LT_ACCESS_KEY,
