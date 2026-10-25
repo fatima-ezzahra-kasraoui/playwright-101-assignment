@@ -8,7 +8,7 @@ npx playwright test
 ```
 Runs the 3 scenarios in parallel on:
 - Windows 10 + Chrome (latest)
-- macOS Catalina + Firefox (latest)
+- macOS Sonoma + Firefox (latest)
 
 Network logs, video, console logs and screenshots are enabled in `fixtures/lambdatest.ts`.
 Test Session IDs: TestMu AI dashboard → Automation → Builds → "Playwright 101 Assignment".

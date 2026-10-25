@@ -14,8 +14,8 @@ export default defineConfig<LtOptions>({
       use: { ltCaps: { browserName: 'Chrome', browserVersion: 'latest', platform: 'Windows 10' } },
     },
     {
-      name: 'macOS-Catalina-Firefox',
-      use: { ltCaps: { browserName: 'pw-firefox', browserVersion: 'latest', platform: 'macOS Catalina' } },
+      name: 'macOS-Sonoma-Firefox',
+      use: { ltCaps: { browserName: 'pw-firefox', browserVersion: 'latest', platform: 'macOS Sonoma' } },
     },
   ],
 });

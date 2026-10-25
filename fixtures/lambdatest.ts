@@ -1,10 +1,10 @@
-import { test as base, chromium } from '@playwright/test';
+import { test as base, chromium, firefox, webkit } from '@playwright/test';
 import 'dotenv/config';
 
 export type LtCaps = {
   browserName: string;      // "Chrome" | "pw-firefox" | "pw-webkit" | "MicrosoftEdge" ...
   browserVersion: string;
-  platform: string;         // "Windows 10" | "macOS Catalina" ...
+  platform: string;         // "Windows 10" | "macOS Sonoma" ...
 };
 
 export type LtOptions = { ltCaps: LtCaps };
@@ -39,7 +39,8 @@ export const test = base.extend<LtOptions>({
       'wss://cdp.lambdatest.com/playwright?capabilities=' +
       encodeURIComponent(JSON.stringify(capabilities));
 
-    const browser = await chromium.connect({ wsEndpoint, timeout: 120_000 });
+    const browserType = ltCaps.browserName === 'pw-firefox' ? firefox : ltCaps.browserName === 'pw-webkit' ? webkit : chromium;
+    const browser = await browserType.connect({ wsEndpoint, timeout: 120_000 });
     const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
     const page = await context.newPage();
 
